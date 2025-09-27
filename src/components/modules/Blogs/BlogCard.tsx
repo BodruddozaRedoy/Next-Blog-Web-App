@@ -70,11 +70,11 @@ export default function BlogCard({ post }: { post: any }) {
             </span>
           </div>
 
-          <div className="text-right">
+          <Link href={`/blogs/${post.id}`} className="text-right">
             <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">
               Read More →
             </span>
-          </div>
+          </Link>
         </div>
       </div>
     </Link>

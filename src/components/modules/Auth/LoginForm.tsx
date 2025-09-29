@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import Image from "next/image";
+import { signIn } from "next-auth/react";
 
 type LoginFormValues = {
   email: string;
@@ -34,6 +35,11 @@ export default function LoginForm() {
 
   const handleSocialLogin = (provider: "google" | "github") => {
     console.log(`Login with ${provider}`);
+    if (provider === "google") {
+      signIn("google", {
+        callbackUrl: "/"
+      })
+    }
   };
 
   return (

@@ -1,7 +1,10 @@
-import GoogleProvider from "next-auth/providers/google";
+﻿import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { NextAuthOptions } from "next-auth";
+import { strict } from "assert";
 
-export const authOptions = {
+
+export const authOptions:NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,

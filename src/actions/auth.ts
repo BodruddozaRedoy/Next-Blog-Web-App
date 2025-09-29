@@ -10,7 +10,7 @@ export const register = async (data: FieldValues) => {
     body: JSON.stringify(data),
   });
   if (!res.ok) {
-    console.error("User registration failed");
+    console.error("User registration failed", res);
   }
 
   return await res.json();
